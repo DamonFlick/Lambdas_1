@@ -10,6 +10,8 @@ namespace Lambdas_1
     {
         static void Main(string[] args)
         {
+            //Create Employee List
+            
             List<Employee> employees = new List<Employee>();
             employees.Add(new Employee() { firstName = "Martha", lastName = "Stewart", ID = 1 });
             employees.Add(new Employee() { firstName = "Joe", lastName = "Hill", ID = 2 });
@@ -22,7 +24,8 @@ namespace Lambdas_1
             employees.Add(new Employee() { firstName = "John", lastName = "Stewart", ID = 9 });
             employees.Add(new Employee() { firstName = "Hugh", lastName = "Mungous", ID = 10 });
 
-
+            
+            // Create sublist with for loop
             List<Employee> newList = new List<Employee>();
             foreach (Employee employee in employees)
             {
@@ -32,9 +35,12 @@ namespace Lambdas_1
                 }          
             }
 
+            //Create sublists with Lambda expressions
             List<Employee> newList2 = employees.Where(e => e.firstName == "Joe").ToList();
             List<Employee> newList3 = employees.Where(e => e.ID > 5).ToList();
 
+
+            //Print
             newList.ForEach(e => Console.WriteLine(e.firstName));
             newList2.ForEach(e => Console.WriteLine(e.firstName));
             newList3.ForEach(e => Console.WriteLine(e.firstName + e.ID));
